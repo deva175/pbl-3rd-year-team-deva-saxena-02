@@ -20,6 +20,7 @@ import CitizenDashboard from './pages/citizen/Dashboard';
 import MyComplaints from './pages/citizen/MyComplaints';
 import Profile from './pages/citizen/Profile';
 import SubmitComplaint from './pages/citizen/SubmitComplaint';
+import TrackStatus from './pages/citizen/TrackStatus.jsx';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forbidden" element={<Forbidden />} />
         <Route path="*" element={<NotFound />} />
+
       </Route>
 
       <Route element={<ProtectedRoute role="CITIZEN" />}>
@@ -39,6 +41,7 @@ export default function App() {
           <Route path="/citizen/complaints" element={<MyComplaints />} />
           <Route path="/citizen/complaints/:id" element={<ComplaintDetail />} />
           <Route path="/citizen/profile" element={<Profile />} />
+          <Route path="/citizen/track" element={<TrackStatus />} />
         </Route>
       </Route>
 
